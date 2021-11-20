@@ -1,13 +1,13 @@
-package com.example.example
+package app.milkyway.data.models
 
 import com.google.gson.annotations.SerializedName
 
-   
-data class Collection (
+
+data class MilkyCollection (
 
    @SerializedName("version") var version : String,
    @SerializedName("href") var href : String,
-   @SerializedName("items") var items : List<Items>,
+   @SerializedName("items") var items : List<MilkyItems>,
    @SerializedName("metadata") var metadata : Metadata
 
 )

@@ -1,4 +1,4 @@
-package com.example.example
+package app.milkyway.data.models
 
 import com.google.gson.annotations.SerializedName
 
