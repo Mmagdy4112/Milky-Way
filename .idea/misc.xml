@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="app/src/main/res/layout/characters_fragment.xml" value="0.1503623188405797" />
+        <entry key="app/src/main/res/layout/fragment_milky_details.xml" value="0.1381340579710145" />
+        <entry key="app/src/main/res/layout/fragment_milky_images.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/item_character.xml" value="0.14447463768115942" />
       </map>
     </option>

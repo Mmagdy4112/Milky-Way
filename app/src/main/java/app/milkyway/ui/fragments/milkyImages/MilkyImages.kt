@@ -1,4 +1,4 @@
-package app.milkyway.ui.fragments.MilkyImages
+package app.milkyway.ui.fragments.milkyImages
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
