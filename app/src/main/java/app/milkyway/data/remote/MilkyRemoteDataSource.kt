@@ -7,4 +7,6 @@ class MilkyRemoteDataSource @Inject constructor(
 ): BaseDataSource() {
 
     suspend fun getMilkyImages(options:HashMap<String,String>) = getResult { milkyService.getAllMilkyImages(options) }
+    suspend fun getMilkyItem(id:String) = getResult { milkyService.getMilkyItem(id)}
+
 }

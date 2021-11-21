@@ -10,12 +10,12 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "milkyItems")
 data class MilkyItems (
-   @PrimaryKey(autoGenerate = true)
-   var id:Int,
    @SerializedName("href") var href : String,
    @TypeConverters(MilkyItemsConverter::class)
-   @SerializedName("data") var data : List<Data> = listOf(),
+   @SerializedName("data") var data : List<Data>,
    @TypeConverters(MilkydataConverter::class)
-   @SerializedName("links") var links : List<Links>
+   @SerializedName("links") var links : List<Links>,
+   @PrimaryKey
+   @SerializedName("nasaID") var nasaID:String
 
 )

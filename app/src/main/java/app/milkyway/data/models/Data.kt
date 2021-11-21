@@ -7,10 +7,7 @@ import app.milkyway.data.converters.StringListConverter
 import com.google.gson.annotations.SerializedName
 import retrofit2.Converter
 
-@Entity(tableName = "data")
 data class Data (
-   @PrimaryKey(autoGenerate = true)
-   var id:Int,
    @TypeConverters(StringListConverter::class)
    @SerializedName("album") var album : List<String>,
    @SerializedName("center") var center : String,

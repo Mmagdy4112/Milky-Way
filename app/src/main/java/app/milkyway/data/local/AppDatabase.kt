@@ -15,10 +15,10 @@ import app.milkyway.data.models.MilkyItems
 import retrofit2.Converter
 
 @TypeConverters(MilkyItemsConverter::class,MilkydataConverter::class, StringListConverter::class)
-@Database(entities = [MilkyItems::class,Links::class,Data::class], version = 1, exportSchema = false)
+@Database(entities = [MilkyItems::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun characterDao(): MilkyDao
+    abstract fun milkyDao(): MilkyDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null
@@ -27,7 +27,7 @@ abstract class AppDatabase : RoomDatabase() {
             instance ?: synchronized(this) { instance ?: buildDatabase(context).also { instance = it } }
 
         private fun buildDatabase(appContext: Context) =
-            Room.databaseBuilder(appContext, AppDatabase::class.java, "characters")
+            Room.databaseBuilder(appContext, AppDatabase::class.java, "milkyway")
                 .fallbackToDestructiveMigration()
                 .build()
     }
