@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/milkyImages">
+
+    <fragment
+        android:id="@+id/milkyImages"
+        android:name="app.milkyway.ui.fragments.milkyImages.MilkyImages"
+        android:label="Milky Way"
+        tools:layout="@layout/fragment_milky_images">
+        <action
+            android:id="@+id/action_milkyImages_to_milkyDetails"
+            app:destination="@id/milkyDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/milkyDetails"
+        android:name="app.milkyway.ui.fragments.milkyDetails.MilkyDetails"
+        tools:layout="@layout/fragment_milky_details" />
+</navigation>
