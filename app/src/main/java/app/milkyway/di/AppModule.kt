@@ -1,10 +1,17 @@
 package app.milkyway.di
 
+import android.content.Context
+import app.milkyway.data.remote.MilkyRemoteDataSource
+import app.milkyway.data.remote.MilkyService
+import app.milkyway.data.repository.MilkyRepository
+import com.example.rickandmorty.data.local.AppDatabase
+import com.example.rickandmorty.data.local.MilkyDao
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -22,4 +29,26 @@ object AppModule {
 
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()
+
+    @Provides
+    fun provideMilkyService(retrofit: Retrofit): MilkyService = retrofit.create(MilkyService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideMilkyRemoteDataSource(milkyService: MilkyService) = MilkyRemoteDataSource(milkyService)
+
+    @Singleton
+    @Provides
+    fun provideDatabase(@ApplicationContext appContext: Context) = AppDatabase.getDatabase(appContext)
+
+    @Singleton
+    @Provides
+    fun provideMilkyDao(db: AppDatabase) = db.milkyDao()
+
+    @Singleton
+    @Provides
+    fun provideRepository(remoteDataSource: MilkyRemoteDataSource,
+                          localDataSource: MilkyDao
+    ) =
+        MilkyRepository(remoteDataSource, localDataSource)
 }
