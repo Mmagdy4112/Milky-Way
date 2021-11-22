@@ -1,9 +1,6 @@
 package app.milkyway.data.local
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import app.milkyway.data.models.Data
 import app.milkyway.data.models.Links
@@ -17,7 +14,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 import javax.inject.Inject
 import javax.inject.Named
 

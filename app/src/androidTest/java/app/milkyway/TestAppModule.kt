@@ -33,11 +33,4 @@ object TestAppModule {
             ApplicationProvider.getApplicationContext(),
             AppDatabase::class.java
         ).allowMainThreadQueries().build()
-
-    @Provides
-    @Named("provide_repo")
-    fun provideRepository(remoteDataSource: MilkyRemoteDataSource,
-                          localDataSource: MilkyDao
-    ) =
-        MilkyRepository(remoteDataSource, localDataSource)
 }
