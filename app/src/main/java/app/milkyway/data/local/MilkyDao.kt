@@ -1,4 +1,4 @@
-package com.example.rickandmorty.data.local
+package app.milkyway.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

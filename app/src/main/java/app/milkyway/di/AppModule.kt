@@ -1,11 +1,12 @@
 package app.milkyway.di
 
 import android.content.Context
+import app.milkyway.MainApplication
 import app.milkyway.data.remote.MilkyRemoteDataSource
 import app.milkyway.data.remote.MilkyService
 import app.milkyway.data.repository.MilkyRepository
-import com.example.rickandmorty.data.local.AppDatabase
-import com.example.rickandmorty.data.local.MilkyDao
+import app.milkyway.data.local.AppDatabase
+import app.milkyway.data.local.MilkyDao
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

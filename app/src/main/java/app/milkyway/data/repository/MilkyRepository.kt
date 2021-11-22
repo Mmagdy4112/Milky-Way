@@ -2,7 +2,7 @@ package app.milkyway.data.repository
 
 import app.milkyway.data.remote.MilkyRemoteDataSource
 import app.milkyway.utils.performGetOperation
-import com.example.rickandmorty.data.local.MilkyDao
+import app.milkyway.data.local.MilkyDao
 import javax.inject.Inject
 
 class MilkyRepository @Inject constructor(

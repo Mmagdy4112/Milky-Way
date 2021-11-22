@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MilkyImages : Fragment(), MilkyImagesAdapter.MilkyItemListener {
 
     private var binding: FragmentMilkyImagesBinding by autoCleared()
-    private val viewModel: MilkyImagesViewModel by viewModels()
+    val viewModel: MilkyImagesViewModel by viewModels()
     private lateinit var adapter: MilkyImagesAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +49,7 @@ class MilkyImages : Fragment(), MilkyImagesAdapter.MilkyItemListener {
                     if (!it.data.isNullOrEmpty()) adapter.setItems(ArrayList(it.data))
                 }
                 Resource.Status.ERROR ->
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
 
                 Resource.Status.LOADING ->
                     binding.progressBar.visibility = View.VISIBLE

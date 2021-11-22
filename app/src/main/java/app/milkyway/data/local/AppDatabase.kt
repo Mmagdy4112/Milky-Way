@@ -1,4 +1,4 @@
-package com.example.rickandmorty.data.local
+package app.milkyway.data.local
 
 import android.content.Context
 import androidx.room.Database
